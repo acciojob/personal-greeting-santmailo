@@ -6,7 +6,13 @@ const App = () => {
   const [task, setTask] = React.useState(""); 
 
   const handleChange = (event) => {
-    setTask(event.target.value);
+    if(event.target.value === ""){
+      setTask("");
+      return;
+    }
+    else{
+      setTask("Hello " + event.target.value + "!");
+    }
   }
 
   return (
